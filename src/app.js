@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // define paths for Express config
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -116,8 +117,8 @@ app.get('*', (req, res) => {
 
 // app.com
 // start up server, local development, default ports of course on sites
-app.listen(3000, () => {
-    console.log ('Server is up on port 3000') // for console to developer
+app.listen(port, () => {
+    console.log ('Server is up on port' + port) // for console to developer
 })
 
 //index.html gets served first
